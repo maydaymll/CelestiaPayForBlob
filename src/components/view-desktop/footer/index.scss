@@ -1,0 +1,28 @@
+.footer-container {
+  width: 100vw;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #303846;
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    .title {
+      margin-bottom: 16px;
+      font-size: 24px;
+      color: #fff;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .item {
+      font-size: 20px;
+      color: #ebedf0;
+    }
+  }
+  .copy-right {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+  }
+}

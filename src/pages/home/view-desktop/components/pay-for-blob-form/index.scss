@@ -1,0 +1,80 @@
+.content {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  .title {
+    width: 70vw;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+  .form-content {
+    width: 70vw;
+    .item-title {
+      font-size: 20px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+    .id-and-node {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .namespace-id {
+        margin-right: 20px;
+      }
+      .namespace-id,
+      .node-ip {
+        flex: 1;
+        .form-control {
+          width: 100%;
+          height: 50px;
+          background-color: #f2f2f2;
+        }
+      }
+    }
+    .fee-and-gas {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      .item-fee {
+        margin-right: 10px;
+      }
+      .item-fee,
+      .item-gas-limit {
+        flex: 1;
+        .form-control {
+          width: 100%;
+          height: 50px;
+        }
+      }
+    }
+    .data {
+      margin-bottom: 20px;
+      .form-control {
+        width: 100%;
+        height: 200px;
+        resize: none;
+        padding: 20px;
+      }
+    }
+    .submit-btn {
+      cursor: pointer;
+      width: 100%;
+      height: 70px;
+      background-color: #7b2bf9;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+  }
+}
