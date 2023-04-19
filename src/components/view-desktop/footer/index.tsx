@@ -36,7 +36,12 @@ const Footer: React.FC = () => {
           <p className="title">More</p>
           <ul>
             <li>
-              <a className="item">Github</a>
+              <a
+                href="https://github.com/maydaymll/CelestiaPayForBlob"
+                className="item"
+              >
+                Github
+              </a>
             </li>
           </ul>
         </div>

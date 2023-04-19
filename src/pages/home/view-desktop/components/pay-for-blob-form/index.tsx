@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import ClipLoader from 'react-spinners/ClipLoader'
 import { apiSubmitPayForBlob } from '@/apis/celestia-controller'
 import { genNameSpaceId, str2hexStr } from '@/utils/helper'
-import TxResult from '../tx-result'
+import { TxResult } from '@/constants'
 
 interface PayForBlobFormProps {}
 
@@ -13,11 +13,15 @@ const PayForBlobForm: React.FC<PayForBlobFormProps> = (props) => {
   const [gas, setGas] = useState(80000)
   const [fee, setFee] = useState(2000)
   const [msg, setMsg] = useState('')
-  const [txResult, setTxResult] = useState(null)
+  const [txResult, setTxResult] = useState<TxResult | null>(null)
   const [nodeId] = useState('http://43.134.230.48:26659/')
   const [namespaceID] = useState(genNameSpaceId())
 
   const showResult = !!txResult
+
+  const reset = () => {
+    setMsg('')
+  }
 
   const onSubmit = async () => {
     if (isLoading) return
@@ -114,7 +118,40 @@ const PayForBlobForm: React.FC<PayForBlobFormProps> = (props) => {
           {isLoading && <ClipLoader color="#ccc" size={20} />}
         </div>
       </div>
-      {showResult && <div className="tx-result"></div>}
+      {showResult && (
+        <div className="tx-result">
+          <div className="r-title">Result Info</div>
+          <div className="item">
+            <label className="item-key">TxHash</label>
+            <a
+              className="item-value"
+              href={`https://testnet.mintscan.io/celestia-incentivized-testnet/txs/${txResult.txhash}`}
+            >
+              {txResult.txhash}
+            </a>
+          </div>
+          <div className="item">
+            <label className="item-key">namespaceID</label>
+            <span className="item-value">{namespaceID}</span>
+          </div>
+          <div className="item">
+            <label className="item-key">heigth</label>
+            <span className="item-value">{txResult.height}</span>
+          </div>
+          <div className="item">
+            <label className="item-key">gas_wanted</label>
+            <span className="item-value">{txResult.gas_wanted}</span>
+          </div>
+          <div className="item">
+            <label className="item-key">gas_used</label>
+            <span className="item-value">{txResult.gas_used}</span>
+          </div>
+          <div className="item">
+            <label className="item-key">data</label>
+            <span className="item-value">{txResult.data}</span>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

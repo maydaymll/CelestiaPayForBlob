@@ -77,4 +77,23 @@
       font-weight: 500;
     }
   }
+  .tx-result {
+    width: 70vw;
+    margin-top: 30px;
+    .r-title {
+      font-size: 50px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .item {
+      display: flex;
+      margin-bottom: 10px;
+      .item-key {
+        width: 200px;
+        font-size: 26px;
+        font-weight: 500;
+        margin-right: 20px;
+      }
+    }
+  }
 }
