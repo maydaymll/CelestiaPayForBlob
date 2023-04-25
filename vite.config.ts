@@ -56,7 +56,7 @@ export default defineConfig(({ mode }) => {
 
     server: {
       port: 3000,
-      host: '127.0.0.1',
+      host: '0.0.0.0',
       proxy: {
         '/submit_pfb': 'http://43.134.230.48:26659',
         '/balance': 'http://43.134.230.48:26659',

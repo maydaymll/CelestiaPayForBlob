@@ -10,4 +10,4 @@ yarn
 yarn dev
 ```
 
-vistit: http://127.0.0.1:3000/
+vistit: http://0.0.0.0:3000/
